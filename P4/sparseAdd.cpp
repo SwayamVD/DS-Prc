@@ -65,7 +65,7 @@ void sparseAdd::add(){
             j++;
             i++;
         }
-        else if(sp1[i][0]<sp2[j][0] || (sp1[i][0]==sp2[j][0] && sp1[j][1]<sp2[i][1])){
+        else if(sp1[i][0]<sp2[j][0] || (sp1[i][0]==sp2[j][0] && sp1[i][1]<sp2[j][1])){
             sp3[k][0]=sp1[i][0];
             sp3[k][1]=sp1[i][1];
             sp3[k][2]=sp1[i][2];
