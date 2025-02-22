@@ -47,6 +47,9 @@ class polyLink{
                         cout<<temp->cof;
                     }
                 }
+                else{
+                        cout<<temp->cof;
+                }
                 cout<<"X^"<<temp->exp<<" ";
                 temp = temp->next;
             }
@@ -84,21 +87,44 @@ class polyLink{
         }
         
     }
+    void sortpoly(){
+        Node* t = head;
+        Node* t2 = head->next;
+        while(t){
+            while(t2){
+                if(t2->exp > t->exp){
+                    int c = t2->cof;
+                    t2->cof = t->cof;
+                    t->cof = c;
+
+                    int e = t2->exp;
+                    t2->exp = t->exp;
+                    t->exp = e;
+
+                }
+                t2 = t2->next;
+            }
+            t = t->next;
+        }
+    }
 };
 int main(){
     polyLink p,b,c;
     cout<<"Polynomial P: ";
-    p.read(8,3);
+    p.read(3,3);
     p.read(1,5);
     p.read(4,2);
+    p.sortpoly();
     p.display();
     cout<<"Polynomial B: ";
-    b.read(2,3);
+    b.read(-5,3);
     b.read(1,4);
     b.read(4,2);
+    b.sortpoly();
     b.display();
     cout<<"Addition of polynomials: ";
     c.addpoly(p.head,b.head);
+    c.sortpoly();
     c.display();
 
 }

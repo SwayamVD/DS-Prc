@@ -7,7 +7,23 @@ class poly{
     void readpoly();
     void displaypoly();
     poly addpoly(poly p1,poly p2);
+    void sortpoly();
 };
+// void poly::sortpoly(){
+//     for(int i=0;i<n;i++){
+//         for(int j=i+1;j<n;j++){
+//             if(p[j][1]>p[i][1]){
+//                 int t1 = p[j][0];
+//                 p[j][0] = p[i][0];
+//                 p[i][0] = t1;
+
+//                 int t2 = p[j][1];
+//                 p[j][1] = p[i][j];
+//                 p[i][1] = t2;
+//             }
+//         }
+//     }
+// }
 void poly::readpoly(){
     cout<<"Enter number of Terms in Polynomial: ";
     cin>>n;
@@ -77,6 +93,7 @@ poly poly::addpoly(poly p1,poly p2){
 int main(){
     poly p1,p2,p3;
     p1.readpoly();
+    // p1.sortpoly();
     p1.displaypoly();
     p2.readpoly();
     p2.displaypoly();

@@ -1,12 +1,20 @@
-    // while(i<p1.n){
-    //     p[k][0] = p1.p[i][0];
-    //     p[k][1] = p1.p[i][1];
-    //     i++;
-    //     k++;
-    // }
-    // while(j<p2.n){
-    //     p[k][0] = p2.p[j][0];
-    //     p[k][1] = p2.p[j][1];
-    //     j++;
-    //     k++;
-    // }
+    void sortpoly(){
+        Node* t = head;
+        Node* t2 = head->next;
+        while(t){
+            while(t2){
+                if(t2->exp > t->exp){
+                    int c = t2->cof;
+                    t2->cof = t->cof;
+                    t->cof = c;
+
+                    int e = t2->exp;
+                    t2->exp = t->exp;
+                    t->exp = e;
+
+                }
+                t2 = t2->next;
+            }
+            t = t->next;
+        }
+    }
